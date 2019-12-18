@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {Container, Row, Col, Form} from 'react-bootstrap';
+import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 import axios from 'axios';
 import * as configs from '../configs/configs';
-import Meteorites from '../components/Meteorites';
+import MeteoritesContainer from './MeteoritesContainer';
 
 const Main = (props) => {
     const [selectedFilter, setSelectedFilter] = useState('year');
@@ -86,9 +86,9 @@ const Main = (props) => {
                             </Form.Group>
                         </Form>
                         {error.show ? <div>{error.msg}</div> : null}
-                        <button onClick={requestData}>testing</button>
-                        {meteorites ? 
-                            <Meteorites meteorites={meteorites} />
+                        <Button type="primary" onClick={requestData}>Get meteorites</Button>
+                        {meteorites.length !== 0 ? 
+                            <MeteoritesContainer meteorites={meteorites} />
                             : null
                         }
                     </Col>

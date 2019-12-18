@@ -2,7 +2,7 @@ import React from 'react';
 import {Card} from 'react-bootstrap';
 
 const Meteorites = (props) => {
-    console.log(props);
+
     let meteoritesComponent = props.meteorites.map((meteorite, idx) => {
         return (
             <Card key={meteorite.id}>
@@ -16,7 +16,6 @@ const Meteorites = (props) => {
             </Card>
         )
     });
-    console.log(meteoritesComponent);
 
     return (
         <React.Fragment>
