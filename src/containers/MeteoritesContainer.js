@@ -12,7 +12,14 @@ const MeteoritesContainer = (props) => {
     const [meteorites, setMeteorites] = useState(props.meteorites);
 
     useEffect(() => {
-        setMeteorites(props.meteorites);
+        let filteredMeteorites = props.meteorites.filter((meteorite) => {
+            // display nothing when there is no mass or recclass
+            if (!meteorite.mass || !meteorite.recclass) {
+                return false;
+            }
+            return true;
+        })
+        setMeteorites(filteredMeteorites);
     }, [props.meteorites]);
     
     const sortByMass = () => {
