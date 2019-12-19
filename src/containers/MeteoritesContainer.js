@@ -33,7 +33,7 @@ const MeteoritesContainer = (props) => {
     return (
         <div style={containerStyle}>
             <Gmap  meteorites={meteorites}/>
-            <Button variant="success" onClick={sortByMass}>Sort By mass</Button>
+            <Button variant="success" onClick={sortByMass} style={{margin:"10px"}}>Sort By mass</Button>
             <Meteorites meteorites={meteorites}/>
         </div>
     )
