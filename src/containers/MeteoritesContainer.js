@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Meteorites from '../components/Meteorites';
-import {Form, Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
+import Gmap from '../components/Gmap';
 
 const containerStyle = {
     margin: "10px"
@@ -8,7 +9,6 @@ const containerStyle = {
 
 const MeteoritesContainer = (props) => {
 
-    const [sortBy, setSortBy] = useState('none');
     const [meteorites, setMeteorites] = useState(props.meteorites);
 
     useEffect(() => {
@@ -32,6 +32,7 @@ const MeteoritesContainer = (props) => {
 
     return (
         <div style={containerStyle}>
+            <Gmap  meteorites={meteorites}/>
             <Button variant="success" onClick={sortByMass}>Sort By mass</Button>
             <Meteorites meteorites={meteorites}/>
         </div>

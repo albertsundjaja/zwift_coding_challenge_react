@@ -42,7 +42,6 @@ const Main = (props) => {
 
         axios.get(`${configs.URL_NODE_SERVER}/meteorites/?${selectedFilter}=${filterValue}`)
         .then((res) => {
-            console.log(res.data);
             setMeteorites(res.data.meteorites);
         })
         .catch((err) => {
